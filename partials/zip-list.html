@@ -1,0 +1,5 @@
+<ul class="list-group zipList">
+    <li class="list-group-item px-1 py-1 {{$index == 0 ? 'active' : ''}}" ng-repeat="x in zipNames">
+        <i class="fa fa-archive text-info "></i><a ng-click="showZipContent($event)" class="btn btn-link shadow-none px-1" data-index="{{$index}}" href="javascript:void">{{x}}</a>
+    </li>
+</ul>

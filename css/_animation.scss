@@ -1,0 +1,42 @@
+.animated.fast {
+    animation-duration: 800ms;
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.slideInLeft {
+    @extend .animated;
+    animation-name: slideInLeft;
+    animation-duration: .4s;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        visibility: hidden;
+    }
+    to {
+        transform: translateX(0);
+        visibility: visible;
+    }
+}
+
+.slideOutLeft {
+    @extend .animated;
+    animation-name: slideOutLeft;
+    animation-duration: .4s;
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+        visibility: visible;
+    }
+    to {
+        transform: translateX(-100%);
+        visibility: hidden;
+    }
+}

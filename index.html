@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="archiveViewer" ng-controller="archiveCtrl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeparl Angular Archive Viewer</title>
+
+    <link rel="stylesheet" href="css/fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="/js/libs/angular.mini.js"></script>
+    <script src="/js/libs/jquery.min.js"></script>
+    <script src="/js/libs/bootstrap.min.js"></script>
+
+    <script src="/js/libs/angular-route.js"></script>
+    <script src="/js/libs/angular-sanitize.js"></script>
+</head>
+
+<body class="bg-light p-0 m-0 ">
+
+    <div class="container-fluid p-0 m-0 ">
+        <div class="d-flex">
+            <aside class="sidebar  position-relative  animated bg-light border-right shadow-lg ">
+                <h2 class="h3 mx-auto text-center"> <button ng-click="showSidebar($event)" class="btn mr-2 hide-sidebar"> <i class="fa fa-long-arrow-alt-left shadow-none" aria-hidden="true"></i> </button> Archives</h2>
+                <div class="p-3 " ng-include="'partials/zip-list.html'"></div>
+            </aside>
+            <main class="main   w-75">
+                <button ng-click="showSidebar($event)" class="btn show-sidebar shadow-none position-absolute "> <i class="fa fa-bars" ></i> </button>
+                <h1 class="mx-auto text-center display-4 my-3">{{title}}</h1>
+                <div class="bg-white rounded-lg archive-content shadow-sm border my-3">
+                    <div class="file-upload position-relative p-3 d-flex bg-light justify-content-between border-bottom w-100 mx-auto" ng-include="'partials/file-upload.html'"></div>
+
+                    <fieldset class="bg-light  mx-auto border p-2 ">
+                        <legend class="h1 text-info current-zip p-2 "><span class="text-danger">Inside</span> {{currentZip}}</legend>
+                        <div class="p-3" id="archiveContent" ng-bind-html="content"></div>
+                    </fieldset>
+                </div>
+
+
+
+            </main>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    {{addInfo()}}
+    <script src="/js/libs/ace-builds/src-min-noconflict/ace.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/archiveController.js"></script>
+</body>
+
+</html>
