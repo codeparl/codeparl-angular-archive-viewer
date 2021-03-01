@@ -175,7 +175,7 @@ angular.module('archiveViewer').controller('archiveCtrl', function($scope, $http
 
 
                     //get the bootstrap modal to display the content
-                    http.get('../partials/modal.html').then(function(modal) {
+                    http.get('partials/modal.html').then(function(modal) {
                         scope.modalTitle = scope.archiveInfo[index].name;
                         var $modal = $(modal.data);
                         $modal.modal({ backdrop: 'static' }).appendTo('body')
